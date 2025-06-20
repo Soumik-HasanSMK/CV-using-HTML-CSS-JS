@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Soumik Hasan - CV</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="toggle-container">
+      <!-- Top Left: Dark Mode -->
+      <button id="Toggle" class="top-left" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i> Dark Mode
+      </button>
+
+      <!-- Top Right: PDF Download -->
+      <button class="top-right" onclick="window.print()">
+        <i class="fas fa-file-download"></i> Download PDF
+      </button>
+    </div>
+
+    <div id="cv" class="cv-container">
+      <div class="left-column">
+        <img src="soumik.jpg" alt="Profile Picture" class="profile-pic" />
+        <h2 class="name"><span id="typed-name"></span></h2>
+        <p class="about">
+          Motivated Computer Science and Engineering student with a solid
+          background in algorithms, data structures, and software development.
+          Passionate about research and data-driven technologies, especially in
+          machine learning, artificial intelligence, and scientific computing. I
+          strive to apply my skills to real-world problems through innovative
+          and impactful solutions, while continuously expanding my expertise and
+          contributing meaningfully to research and technology.
+        </p>
+
+        <h3>Contact</h3>
+        <ul class="contact">
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="soumik.hasan.smk@email.com">soumik.hasan.smk@email.com</a>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+8801716101715">+8801716101715</a>
+          </li>
+          <li><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</li>
+        </ul>
+
+        <h3>Education</h3>
+        <ul>
+          <li>B.Sc in CSE - Dhaka International University (CGPA: 3.98)</li>
+          <li>HSC (Science) - Rangpur Govt. College (GPA: 4.42)</li>
+          <li>SSC (Science) - Pirganj Govt. High School (GPA: 5.00)</li>
+        </ul>
+      </div>
+
+      <div class="right-column">
+        <h2 class="skill">Skills</h2>
+        <ul class="skills">
+          <li>HTML/CSS/JavaScript</li>
+          <li>C++, Python, Java</li>
+          <li>Machine Learning, Data Analysis</li>
+          <li>SQL, Git, GitHub</li>
+        </ul>
+
+        <h2>Experience</h2>
+        <div class="experience">
+          <h4>Problem Solver</h4>
+          <ol>
+            <li>Solved 200+ problems on Codeforces.</li>
+            <li>Solved 100+ problems on CodeChef.</li>
+            <li>Solved 150+ problems on LeetCode.</li>
+            <li>1st place in DIU Spring Fest CP Contest(2024).</li>
+          </ol>
+
+          <h4>Leadership</h4>
+          <ol>
+            <li>
+              General Secretary, Dhaka International University IEEE student
+              branch.
+            </li>
+            <li>Joint Secretary, DIU Computer Programming Club.</li>
+            <li>Co-Convenor, DIU Robotics Club.</li>
+          </ol>
+        </div>
+
+        <h2 onclick="toggleSection(this)">Projects ▾</h2>
+        <div class="col">
+          <ul>
+            <li><strong>Diabetes Prediction</strong> - ML models + SHAP XAI</li>
+            <li><strong>Task Management System</strong> - Django</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 1rem">
+      <p>
+        &copy; <span id="year"></span> Md. Soumik Hasan. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

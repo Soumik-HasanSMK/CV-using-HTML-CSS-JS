@@ -1,0 +1,223 @@
+:root {
+  --cv-bg: #dbf7f0;
+  --bg-color: #96dded;
+  --text-color: black;
+  --accent-color: #007BFF;
+}
+
+body.dark {
+  --cv-bg: #1e1e1e;
+  --text-color: #f4f4f4;
+}
+
+.name{
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--page-bg); /* Always white */
+  color: var(--text-color);
+}
+
+.cv-container {
+  background-color: var(--cv-bg);   /* Dynamic dark/light */
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* Dark Mode specific text fixes */
+body.dark .left-column,
+body.dark .right-column {
+  color: var(--text-color);
+}
+
+body.dark .left-column a,
+body.dark .right-column a {
+  color: var(--text-color);
+}
+
+/* Optional: make headings brighter in dark mode */
+body.dark h2,
+body.dark h3 {
+  color: aqua;
+}
+body.dark h4 {
+  color: #06e23d;
+}
+
+body {
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.contact a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.contact i {
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+.top-left, .top-right {
+  position: fixed;
+  top: 15px;
+  padding: 10px 16px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.top-left {
+  left: 15px;
+}
+
+.top-right {
+  right: 15px;
+}
+
+.top-left i, .top-right i {
+  margin-right: 6px;
+}
+
+.toggle-container {
+  text-align: center;
+  padding: 1rem;
+}
+
+.toggle-container button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.cv-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.left-column, .right-column {
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.left-column {
+  background-color: var(--left-bg);
+}
+
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  display: block;
+  border: 2px solid var(--accent-color); 
+}
+
+h2, h3 {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 5px;
+}
+
+.skill
+{
+  margin-top: 30px;
+}
+
+.skills li, .experience p, .left-column ul li {
+  margin: 5px 0;
+}
+
+.skills li::before {
+  content: '➤';
+  color: var(--accent-color);
+  margin-right: 8px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 24px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.col {
+  display: none;
+  padding: 10px 0;
+}
+
+h2 {
+  cursor: pointer;
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+
+  /* Only show CV */
+  body * {
+    visibility: hidden;
+  }
+
+  #cv, #cv * {
+    visibility: visible;
+  }
+
+  #cv {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Hide buttons and scroll-to-top */
+  .top-left,
+  .top-right,
+  #scrollTopBtn,
+  footer {
+    display: none !important;
+  }
+  @page {
+  margin: 0;
+}
+
+}
