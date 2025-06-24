@@ -16,9 +16,10 @@ This project is a responsive and interactive personal CV/Resume webpage built us
 > https://soumik-hasansmk.github.io/CV-using-HTML-CSS-JS/
 
 Light Mode:
-![Screenshot 2025-06-21 020712](https://github.com/user-attachments/assets/fa82e2a1-db78-45e6-ad39-06fdb9e8e2ad)
+![image](https://github.com/user-attachments/assets/fe5cd890-6245-45a0-85ab-e9e4d5e55926)
 
 
 Night Mode:
-![Screenshot 2025-06-21 020638](https://github.com/user-attachments/assets/fe221126-5ded-4fe9-8879-e83d65ef7e53)
+![image](https://github.com/user-attachments/assets/86d6240e-48de-4b30-8766-6ead94fb344f)
+
 
