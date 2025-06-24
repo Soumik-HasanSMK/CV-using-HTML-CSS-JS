@@ -1,68 +1,111 @@
 :root {
-  --cv-bg: #dbf7f0;
-  --bg-color: #96dded;
-  --text-color: black;
+  --cv-bg: #ffffff;
+  --page-bg: #f4f7f8;
+  --text-color: #333333;
   --accent-color: #007BFF;
+  --secondary-color: #555;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body.dark {
   --cv-bg: #1e1e1e;
+  --page-bg: #121212;
   --text-color: #f4f4f4;
-}
-
-.name{
-  text-align: center;
+  --accent-color: #00aaff;
+  --secondary-color: #aaaaaa;
+  --border-color: #333333;
+  --shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--page-bg); /* Always white */
+  background-color: var(--page-bg);
   color: var(--text-color);
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .cv-container {
-  background-color: var(--cv-bg);   /* Dynamic dark/light */
+  background-color: var(--cv-bg);
   display: flex;
   flex-wrap: wrap;
+  max-width: 960px;
   margin: 40px auto;
-  max-width: 1000px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
   overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-/* Dark Mode specific text fixes */
-body.dark .left-column,
-body.dark .right-column {
-  color: var(--text-color);
+.left-column, .right-column {
+  padding: 30px;
+  flex: 1;
+  min-width: 320px;
+  box-sizing: border-box;
 }
 
-body.dark .left-column a,
-body.dark .right-column a {
-  color: var(--text-color);
+.left-column {
+  background-color: #f0f9ff;
+  border-right: 1px solid var(--border-color);
+}
+body.dark .left-column {
+  background-color: #1a1a1a;
 }
 
-/* Optional: make headings brighter in dark mode */
-body.dark h2,
-body.dark h3 {
-  color: aqua;
-}
-body.dark h4 {
-  color: #06e23d;
+.name {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-body {
-  margin-left: 20%;
-  margin-right: 20%;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+.about {
+  text-align: justify;
+  font-size: 15px;
+  color: var(--secondary-color);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+h2, h3 {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 5px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  color: var(--accent-color);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skills li::before,
+.contact li::before {
+  content: "✔";
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills li,
+.contact li,
+.experience li {
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .contact a {
-  color: var(--text-color);
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -70,10 +113,22 @@ body {
   text-decoration: underline;
 }
 
-.contact i {
-  margin-right: 8px;
-  color: var(--accent-color);
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  display: block;
+  margin: 0 auto 1rem auto;
 }
+
+.experience li {
+  padding-left: 12px;
+  border-left: 3px solid var(--accent-color);
+  margin-bottom: 8px;
+}
+
 .top-left, .top-right {
   position: fixed;
   top: 15px;
@@ -85,15 +140,15 @@ body {
   cursor: pointer;
   z-index: 1000;
   font-size: 14px;
+  transition: background-color 0.3s;
 }
 
-.top-left {
-  left: 15px;
+.top-left:hover, .top-right:hover {
+  background-color: #005bb5;
 }
 
-.top-right {
-  right: 15px;
-}
+.top-left { left: 15px; }
+.top-right { right: 15px; }
 
 .top-left i, .top-right i {
   margin-right: 6px;
@@ -101,67 +156,7 @@ body {
 
 .toggle-container {
   text-align: center;
-  padding: 1rem;
-}
-
-.toggle-container button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.cv-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.left-column, .right-column {
-  padding: 20px;
-  flex: 1;
-  min-width: 300px;
-}
-
-.left-column {
-  background-color: var(--left-bg);
-}
-
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 0 auto 1rem auto;
-  display: block;
-  border: 2px solid var(--accent-color); 
-}
-
-h2, h3 {
-  color: var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
-  padding-bottom: 5px;
-}
-
-.skill
-{
-  margin-top: 30px;
-}
-
-.skills li, .experience p, .left-column ul li {
-  margin: 5px 0;
-}
-
-.skills li::before {
-  content: '➤';
-  color: var(--accent-color);
-  margin-right: 8px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
+  margin-top: 1rem;
 }
 
 #scrollTopBtn {
@@ -169,23 +164,40 @@ ul {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  font-size: 24px;
+  font-size: 20px;
   background-color: var(--accent-color);
   color: white;
   border: none;
   border-radius: 50%;
-  padding: 10px 16px;
+  padding: 12px 15px;
   cursor: pointer;
   z-index: 999;
+  transition: background-color 0.3s;
+}
+
+#scrollTopBtn:hover {
+  background-color: #005bb5;
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 14px;
+  padding: 1rem 0;
 }
 
 .col {
   display: none;
   padding: 10px 0;
+  transition: all 0.3s ease-in-out;
 }
 
-h2 {
+h2.skill, h2[onclick] {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media print {
@@ -193,7 +205,6 @@ h2 {
     background: white !important;
   }
 
-  /* Only show CV */
   body * {
     visibility: hidden;
   }
@@ -209,15 +220,14 @@ h2 {
     width: 100%;
   }
 
-  /* Hide buttons and scroll-to-top */
   .top-left,
   .top-right,
   #scrollTopBtn,
   footer {
     display: none !important;
   }
-  @page {
-  margin: 0;
-}
 
+  @page {
+    margin: 0;
+  }
 }

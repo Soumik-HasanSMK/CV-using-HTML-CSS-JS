@@ -32,6 +32,7 @@ window.onload = function () {
     }
     document.getElementById("year").textContent = new Date().getFullYear();
 };
+document.body.style.opacity = 1;
 
 // Scroll to Top Button
 const scrollBtn = document.getElementById("scrollTopBtn");
