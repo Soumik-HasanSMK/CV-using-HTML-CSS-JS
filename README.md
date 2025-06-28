@@ -20,6 +20,7 @@ Light Mode:
 
 
 Night Mode:
-![image](https://github.com/user-attachments/assets/86d6240e-48de-4b30-8766-6ead94fb344f)
+![image](https://github.com/user-attachments/assets/82c010d6-b36c-4cda-8e14-d64ecc6fd4c3)
+
 
 
