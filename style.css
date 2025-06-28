@@ -193,6 +193,12 @@ footer {
   transition: all 0.3s ease-in-out;
 }
 
+.project-item::before {
+  content: "➤";
+  color: var(--accent-color);
+  margin-right: 8px;
+}
+
 h2.skill, h2[onclick] {
   cursor: pointer;
   display: flex;

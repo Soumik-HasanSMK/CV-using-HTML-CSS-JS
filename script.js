@@ -1,4 +1,3 @@
-// Typing Effect for Name
 const nameStr = "MD. SOUMIK HASAN";
 let i = 0;
 function typeWriter() {
@@ -9,7 +8,7 @@ function typeWriter() {
     }
 }
 
-// Dark Mode Toggle with localStorage
+// Dark Mode Toggle
 function toggleDarkMode() {
     const isDark = document.body.classList.toggle('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
@@ -24,7 +23,6 @@ function toggleDarkMode() {
 }
 
 
-// On Load
 window.onload = function () {
     typeWriter();
     if (localStorage.getItem('theme') === 'dark') {
